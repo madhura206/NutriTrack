@@ -1,0 +1,198 @@
+/* Reset & base styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f6f9fc, #e0f7fa);
+  margin: 0;
+  padding: 40px;
+  text-align: center;
+  color: #333;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 40px;
+  color: #00796b;
+}
+
+h2, h3 {
+  color: #004d40;
+  margin-bottom: 10px;
+}
+
+.form-container {
+  background-color: white;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 150, 136, 0.2);
+}
+
+input, select, button {
+  display: block;
+  width: 100%;
+  margin: 15px 0;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #26a69a;
+  box-shadow: 0 0 8px rgba(38, 166, 154, 0.3);
+}
+
+/* Add these to existing button styles */
+button {
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 121, 107, 0.3);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 121, 107, 0.4);
+}
+
+/* Navbar buttons */
+/* Update navbar styles */
+.navbar {
+  background: linear-gradient(to right, #2d3436, #1e272e);
+  padding: 12px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 4px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-link:hover {
+  background: #00cec9;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 206, 201, 0.4);
+  color: #1e272e;
+}
+
+/* Add active state */
+.nav-link.active {
+  background: #00cec9;
+  color: #1e272e;
+  box-shadow: 0 0 15px rgba(0, 206, 201, 0.5);
+}
+
+.summary-box {
+  background-color: #e0f2f1;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 150, 136, 0.15);
+  font-size: 1.1rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px;
+  text-align: left;
+  max-width: 500px;
+  margin: auto;
+}
+
+li {
+  background: #ffffff;
+  margin-bottom: 10px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .form-container, .summary-box, ul {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+.progress-label {
+  position: absolute;
+  top: 71%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #00695c;
+  text-align: center;
+}
+
+.progress-label small {
+  font-size: 0.8rem;
+  display: block;
+  margin-top: 4px;
+}
+.progress-ring__circle {
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+/* ===== NAVBAR STYLES ===== */
+.navbar {
+  background-color: #2d3436;
+  color: white;
+  padding: 15px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+  margin: auto;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00cec9;
+}
+
+/* Enhanced form feedback */
+input:invalid {
+  border-color: #ff7675;
+}
+
+input:valid {
+  border-color: #55efc4;
+}
+
+/* Clear form button */
+.form-clear {
+  background: #dfe6e9;
+  color: #2d3436;
+  margin-top: 5px;
+}
+
+.form-clear:hover {
+  background: #b2bec3;
+  transform: translateY(-2px);
+}
+
+
+
