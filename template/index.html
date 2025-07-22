@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NutriTrack - Login / Signup</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Welcome to NutriTrack</h1>
+
+
+  <div class="form-container">
+    <h2>Sign Up</h2>
+    <form action="/signup" method="post" autocomplete="off">
+  <input type="text" name="username" placeholder="Username" required>
+  <input type="password" name="password" placeholder="Password" required>
+  <button type="submit">Sign Up</button>
+</form>
+  </div>
+
+  <div class="form-container">
+    <h2>Log In</h2>
+   <form action="/login" method="post" autocomplete="off">
+  <input type="text" name="username" placeholder="Username" required>
+  <input type="password" name="password" placeholder="Password" required>
+  <button type="submit">Login</button>
+</form>
+  </div>
+
+  <script>
+  // Auto-clear forms on logout
+  if (urlParams.has('cleared')) {
+    document.getElementById('login-form').reset();
+  }
+</script>
+  
+
+</body>
+</html>
