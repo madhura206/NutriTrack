@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NutriTrack - Summary</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Example for summary.html -->
+<div class="nav-links">
+ 
+  <a href="{{ url_for('summary') }}" class="nav-link active">Profile</a>
+  <a href="{{ url_for('goals') }}" class="nav-link">Set Goals</a>
+  <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+</div>
+
+  <h1>Hello, {{ username|capitalize }} 👋</h1>
+  <h2>Today's Summary</h2>
+
+  <div class="summary-box">
+  <p><strong>Water Intake:</strong> {{ total_water }} / {{ water_goal }} cups</p>
+  <p><strong>Calories:</strong> {{ total_calories }} / {{ calorie_goal }} kcal</p>
+  
+  <!-- Progress ring -->
+</div>
+    <!-- For JS to read value -->
+    <p id="totalCalories" data-value="{{ total_calories }}" style="display: none;"></p>
+
+
+    <h2>Your Progress</h2>
+<div class="progress-ring">
+  <svg width="120" height="120">
+    <circle class="progress-ring__background"
+            stroke="#eee"
+            stroke-width="10"
+            fill="transparent"
+            r="50"
+            cx="60"
+            cy="60"/>
+    <circle class="progress-ring__circle"
+            stroke="#00b894"
+            stroke-width="10"
+            fill="transparent"
+            r="50"
+            cx="60"
+            cy="60"
+            data-total-water="{{ total_water }}"
+            data-water-goal="{{ water_goal }}"
+            data-total-calories="{{ total_calories }}"
+            data-calorie-goal="{{ calorie_goal }}"/>
+  </svg>
+  <div class="progress-label" id="progress-label">0%</div>
+</div>
+
+  <h3>All Entries Today:</h3>
+  <ul>
+    {% for entry in entries %}
+      <li>🍴 {{ entry.food }} — 💧 {{ entry.water }} cups — 🔥 {{ entry.calories }} kcal</li>
+    {% endfor %}
+  </ul>
+
+  <a href="{{ url_for('log_entry') }}"><button>Log Another Entry</button></a>
+
+  <!-- Load JS -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

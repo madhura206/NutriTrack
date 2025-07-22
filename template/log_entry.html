@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NutriTrack - Log Entry</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Log Your Intake</h1>
+  <!-- Example for summary.html -->
+<div class="nav-links">
+  
+  <a href="{{ url_for('summary') }}" class="nav-link active">Profile</a>
+  <a href="{{ url_for('goals') }}" class="nav-link">Set Goals</a>
+  <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+</div>
+
+
+  <div class="form-container">
+    <form action="/log_entry" method="post">
+      <label for="food">Select Food Item:</label>
+      <select name="food" id="food" required>
+        <option value="">--Choose food--</option>
+        <option value="apple">Apple</option>
+        <option value="banana">Banana</option>
+        <option value="rice">Rice</option>
+        <option value="bread">Bread</option>
+        <option value="milk">Milk</option>
+      </select>
+
+      <label for="water">Water Intake (in cups):</label>
+      <input type="number" name="water" min="1" max="30" required>
+
+      <button type="submit">Log Entry</button>
+    </form>
+  </div>
+</body>
+</html>

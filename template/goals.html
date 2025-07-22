@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Set Goals</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+ <!-- Example for summary.html -->
+<div class="nav-links">
+ 
+  <a href="{{ url_for('summary') }}" class="nav-link active">Profile</a>
+  <a href="{{ url_for('goals') }}" class="nav-link">Set Goals</a>
+  <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+</div>
+
+  <div class="form-container">
+    <h2>Set Your Goals</h2>
+    <form action="/goals" method="post">
+      <label for="water_goal">Daily Water Goal (cups):</label>
+      <input type="number" name="water_goal" min="1" max="20" value="{{ goals.water }}" required>
+      
+      <label for="calorie_goal">Daily Calorie Goal (kcal):</label>
+      <input type="number" name="calorie_goal" min="500" max="5000" value="{{ goals.calories }}" required>
+      
+      <button type="submit">Save Goals</button>
+    </form>
+  </div>
+</body>
+</html>
