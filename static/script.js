@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-  window.onload = function() {
-    document.querySelector('form').reset();  // clears the form on page load
-  };
+window.onload = function() {
+    var form = document.querySelector('form');
+    if (form) form.reset();
+};
